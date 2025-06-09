@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "Figure.h"
 #include "Rectangle.h"
 #include "Square.h"
@@ -15,6 +14,7 @@ int main()
     Circle C1("C1", 5.0);
     Triangle T1("T1", 5.0);
 
+
     R1.Info();
     std::cout << std::endl;
     R2.Info();
@@ -29,19 +29,27 @@ int main()
 
 
     std::cout << "Wykorzystanie wskaznika" << std::endl;
-    Figure* pointer_s = &S1;
-    Figure* pointer_r = &R1;
-    std::cout << std::endl;
-    pointer_s->Info();
-    std::cout << std::endl;
-    pointer_r->Info();
+    Figure* figures[] = { &S1, &R1, &C1, &T1 };
+
+    for (int i = 0; i < 4; ++i) {
+        figures[i]->Info();
+        std::cout << std::endl;
+    }
 
     std::cout << "Wykorzystanie referencji" << std::endl;
     Figure& ref_s = S1;
     Figure& ref_r = R1;
+    Figure& ref_c = C1;
+    Figure& ref_t = T1;
+
     std::cout << std::endl;
     ref_s.Info();
     std::cout << std::endl;
     ref_r.Info();
+    std::cout << std::endl;
+    ref_c.Info();
+    std::cout << std::endl;
+    ref_t.Info();
+
 
 }
