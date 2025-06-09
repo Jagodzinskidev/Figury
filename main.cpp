@@ -4,6 +4,7 @@
 #include "Rectangle.h"
 #include "Square.h"
 #include "Circle.h"
+#include "Triangle.h"
 
 int main()
 {
@@ -12,7 +13,7 @@ int main()
     Rectangle R3;
     Square S1("S1", 5.0);
     Circle C1("C1", 5.0);
-
+    Triangle T1("T1", 5.0);
 
     R1.Info();
     std::cout << std::endl;
@@ -23,6 +24,9 @@ int main()
     S1.Info();
     std::cout << std::endl;
     C1.Info();
+    std::cout << std::endl;
+    T1.Info();
+
 
     std::cout << "Wykorzystanie wskaznika" << std::endl;
     Figure* pointer_s = &S1;
